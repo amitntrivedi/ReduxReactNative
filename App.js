@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import type { Node } from 'react';
 import { useState } from 'react';
 import {
   SafeAreaView,
@@ -21,24 +21,24 @@ import {
 } from 'react-native';
 
 const App: () => Node = () => {
-  const [count,setCount ] =useState(10); 
+  const [count, setCount] = useState(0);
 
   return (
     <SafeAreaView>
-      <ScrollView         contentInsetAdjustmentBehavior="automatic">
-         <View>
-          <Text style={styles.sectionTitle} >         Redux React Native Example </Text>   
-        </View> 
+      <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View>
-          <Button title="Increment" onPress={()=>{setCount(count +1 )}} > </Button>   
-        </View> 
+          <Text style={styles.sectionTitle} >Redux React Native Example </Text>
+        </View>
         <View>
-          <Text>    {count}   </Text>   
-        </View> 
+          <Button title="Increment" onPress={() => { setCount(count + 1) }} > </Button>
+        </View>
         <View>
-          <Button title="Decrement" onPress={()=>{setCount(count -1 )}} > </Button>   
-        </View> 
-        
+          <Text>{count}</Text>
+        </View>
+        <View>
+          <Button title="Decrement" onPress={() => { setCount(count - 1) }} > </Button>
+        </View>
+
       </ScrollView>
     </SafeAreaView>
   );
